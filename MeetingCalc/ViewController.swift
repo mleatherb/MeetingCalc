@@ -20,14 +20,14 @@ class ViewController: UIViewController {
     @IBAction func calculateButton(_ sender: Any) {
         
         
-        let minWorkedInYear: Float = 52 * 5 * 8 * 60 * 60
+        let minWorkedInYear: Float = 52 * 5 * 8 * 60
         let attendeeCount = Float(numberOfAttendeesInput.text!)
         let averageSalary = Float(averageSalaryInput.text!)
         let meetingLength = Float(meetingLengthInput.text!)
         
-        let meetingCost: Float = ((attendeeCount! * averageSalary!) / minWorkedInYear ) * meetingLength!
+        let meetingCost: Float = (averageSalary! / minWorkedInYear) * attendeeCount! * meetingLength!
         
-        meetingCostLabel.text = String(meetingCost)
+        meetingCostLabel.text = String(format: "%.2f", meetingCost)
         
     }
 
