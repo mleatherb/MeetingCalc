@@ -16,6 +16,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var averageSalaryInput: UITextField!
     @IBOutlet weak var meetingLengthInput: UITextField!
     
+    let meetingCostLabel.placeholder = 0
+    
+    // Dismiss numpad when tapping on view
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for txt in self.view.subviews {
+            if txt.isKind(of: UITextField.self) && txt.isFirstResponder {
+                txt.resignFirstResponder()
+            }
+        }
+    }
+    
     
     @IBAction func calculateButton(_ sender: Any) {
         
